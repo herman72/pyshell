@@ -1,15 +1,20 @@
 import sys
 
-
 def main():
-    # Uncomment this block to pass the first stage
-    while True:
-        sys.stdout.write("$ ")
+    try:
+        while True:
+            sys.stdout.write("$ ")
+            sys.stdout.flush()  # Ensure the prompt is displayed immediately
 
-        # Wait for user input
-        command = input()
-        print(f"{command}: command not found")
+            # Wait for user input
+            command = input()
+            if command.lower() in ["exit", "quit"]:
+                print("Exiting shell...")
+                break
 
+            print(f"{command}: command not found")
+    except KeyboardInterrupt:
+        print("\nExiting shell...")
 
 if __name__ == "__main__":
     main()
