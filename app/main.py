@@ -8,8 +8,6 @@ def main():
 
             # Wait for user input
             command = input()
-            
-
             print(f"{command}: command not found")
     except KeyboardInterrupt:
         print("\nExiting shell...")
