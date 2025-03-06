@@ -10,11 +10,12 @@ def main():
             command = input()
             if command.lower() in ["exit 0"]:
                 print("Exiting shell...")
-                break
+                sys.exit(0)
 
             print(f"{command}: command not found")
     except KeyboardInterrupt:
         print("\nExiting shell...")
+        sys.exit(0)
 
 if __name__ == "__main__":
     main()
