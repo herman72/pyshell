@@ -4,7 +4,7 @@ def main():
     try:
         while True:
             sys.stdout.write("$ ")
-            sys.stdout.flush()  # Ensure the prompt is displayed immediately
+            # sys.stdout.flush()  # Ensure the prompt is displayed immediately
 
             # Wait for user input
             command = input()
