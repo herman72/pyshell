@@ -8,9 +8,7 @@ def main():
 
             # Wait for user input
             command = input()
-            if command.lower() in ["exit", "quit"]:
-                print("Exiting shell...")
-                break
+            
 
             print(f"{command}: command not found")
     except KeyboardInterrupt:
