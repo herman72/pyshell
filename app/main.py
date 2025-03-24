@@ -4,14 +4,13 @@ import os
 def main():
     input_path = os.environ.get("PATH", "")
     input_path = input_path.split(":") if input_path else []
-    is_found = False
     
     try:
         while True:
             sys.stdout.write("$ ")
             sys.stdout.flush()  # Ensure the prompt is displayed immediately
 
-
+            is_found = False
             # Wait for user input
             command = input()
             if command.lower() in ["exit 0"]:
