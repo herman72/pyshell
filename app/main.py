@@ -11,6 +11,7 @@ def main():
             sys.stdout.write("$ ")
             sys.stdout.flush()  # Ensure the prompt is displayed immediately
 
+
             # Wait for user input
             command = input()
             if command.lower() in ["exit 0"]:
