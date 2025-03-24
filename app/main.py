@@ -15,7 +15,8 @@ def main():
             elif command.lower().split()[0] == "echo":
                 print(" ".join(command.split()[1:]))
 
-            # print(f"{command}: command not found")
+            else:
+                print(f"{command}: command not found")
     except KeyboardInterrupt:
         print("\nExiting shell...")
         sys.exit(0)
