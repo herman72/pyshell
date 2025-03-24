@@ -28,7 +28,11 @@ def main():
                 case [arg1, arg2]:
                     if (path1 := shutil.which(arg1)):
                         # execute arg1 with arg2 as argument
-                        os.execv(path1, [arg1, arg2])
+                        pid = os.fork()
+                        if pid == 0:  # Child process
+                            os.execv(path1, [arg1, arg2])
+                        else:  # Parent process
+                            os.waitpid(pid, 0)  # Wait for the child process to finish
                     else:
                         print(f"{command}: command not found")
                     
