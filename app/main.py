@@ -9,10 +9,13 @@ def main():
             # Wait for user input
             command = input()
             if command.lower() in ["exit 0"]:
-                
                 sys.exit(0)
+            elif command.lower() in ["exit 1"]:
+                sys.exit(1)
+            elif command.lower().split()[0] == "echo":
+                print(" ".join(command.split()[1:]))
 
-            print(f"{command}: command not found")
+            # print(f"{command}: command not found")
     except KeyboardInterrupt:
         print("\nExiting shell...")
         sys.exit(0)
