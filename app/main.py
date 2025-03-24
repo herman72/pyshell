@@ -1,6 +1,11 @@
 import sys
+import os
 
 def main():
+    input_path = os.environ.get("PATH", "")
+    input_path = input_path.split(":") if input_path else []
+    
+    
     try:
         while True:
             sys.stdout.write("$ ")
@@ -17,8 +22,15 @@ def main():
             elif command.lower().split()[0] == "type":
                 if command.lower().split()[1] in ["exit", "type", "echo"]:
                     print(f"{command.split()[1]} is a shell builtin")
+                
+                elif input_path is not None:
+                    for path in input_path:
+                        if os.path.exists(f"{path}/{command.split()[1]}"):
+                            print(f"{command.split()[1]} is {path}/{command.split()[1]}")
+                            break       
                 else:
                     print(f"{command.split()[1]}: not found")
+                    break  # Ensure the loop exits after handling the command
             else:
                 print(f"{command}: command not found")
     except KeyboardInterrupt:
