@@ -27,6 +27,7 @@ def main():
                         print(f"{arg}: not found")
                 case [arg1, arg2]:
                     print(shutil.which(arg1))
+                    print("helloowwww")
                     print(shutil.which(arg2))
                     if (path1 := shutil.which(arg1)) and (path2 := shutil.which(arg2)):
                         # execute arg1 with arg2 as argument
