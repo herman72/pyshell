@@ -35,6 +35,8 @@ def main():
                             os.waitpid(pid, 0)  # Wait for the child process to finish
                     else:
                         print(f"{command}: command not found")
+                case _:
+                    print(f"{command}: command not found")
                     
             # if command.lower() in ["exit 0"]:
             #     sys.exit(0)
