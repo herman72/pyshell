@@ -29,7 +29,7 @@ def main():
                     print(shutil.which(arg1))
                     print("helloowwww")
                     print(shutil.which(arg2))
-                    if (path1 := shutil.which(arg1)) and (path2 := shutil.which(arg2)):
+                    if (path1 := shutil.which(arg1)):
                         # execute arg1 with arg2 as argument
                         os.execv(path1, [arg1, arg2])
                     else:
