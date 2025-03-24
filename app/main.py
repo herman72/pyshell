@@ -14,7 +14,11 @@ def main():
                 sys.exit(1)
             elif command.lower().split()[0] == "echo":
                 print(" ".join(command.split()[1:]))
-
+            elif command.lower().split()[0] == "type":
+                if command.lower().split()[1] in ["exit", "type", "echo"]:
+                    print(f"{command.split()[1]} is a shell builtin")
+                else:
+                    print(f"{command.split()[1]}: command not found")
             else:
                 print(f"{command}: command not found")
     except KeyboardInterrupt:
